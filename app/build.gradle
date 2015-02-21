@@ -22,7 +22,7 @@ try {
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
+    buildToolsVersion "20.0.0"
     defaultConfig {
         applicationId "io.fabric.samples.cannonball"
         minSdkVersion 20
