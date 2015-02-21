@@ -1,7 +1,6 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
-        maven { url 'http://mvn.sibext.com' }
     }
 
     dependencies {
@@ -11,7 +10,6 @@ buildscript {
 
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
-
 
 Properties props = new Properties()
 try {
@@ -34,6 +32,15 @@ android {
         versionName "0.9.8"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("/home/ubuntu/cannonball-android.jks")
+            storePassword "twitterdev"
+            keyAlias "twitterdev"
+            keyPassword "twitterdev"
+        }
+    }
+
     buildTypes {
         debug {
             buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
@@ -45,7 +52,9 @@ android {
             buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
             buildConfigField "String", "MOPUB_AD_UNIT_ID", "\"${props.getProperty("mopubAdUnitId")}\""
             minifyEnabled false
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
@@ -54,7 +63,6 @@ android {
 repositories {
     mavenCentral()
     maven { url 'https://maven.fabric.io/public' }
-    maven { url 'http://mvn.sibext.com' }
 }
 
 dependencies {
@@ -63,8 +71,6 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:support-annotations:21.0.3'
     compile 'com.android.support:cardview-v7:21.0.3'
-    compile 'com.android.support:support-annotations:21.0.3'
-    compile 'com.android.support:support-v4:21.0.3'
 
     compile('com.twitter.sdk.android:twitter:1.3.0@aar') {
         transitive = true;
