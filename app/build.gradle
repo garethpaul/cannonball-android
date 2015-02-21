@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jCentral()  // <- *add this
+        jcentral()  // <- *add this
         maven { url 'https://maven.fabric.io/public' }
     }
 
@@ -49,7 +49,7 @@ android {
 }
 
 repositories {
-    jCentral()
+    jcentral()
     maven { url 'https://maven.fabric.io/public' }
 }
 
