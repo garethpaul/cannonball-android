@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
+        maven { url 'http://mvn.sibext.com' }
     }
 
     dependencies {
@@ -49,6 +50,7 @@ android {
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
+    maven { url 'http://mvn.sibext.com' }
 }
 
 dependencies {
