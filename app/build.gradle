@@ -12,22 +12,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 
 
-Properties props = new Properties()
-try {
-    props.load(file('crashlytics.properties').newDataInputStream())
-} catch (Exception ex) {
-    throw new GradleException("Missing crashlytics.properties, check the crashlytics.properties.sample file.");
-}
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.0.1"
     defaultConfig {
         applicationId "io.fabric.samples.cannonball"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 21
         versionCode 5
-        versionName "0.9.8"
+        versionName "0.9.9"
     }
 
     buildTypes {
