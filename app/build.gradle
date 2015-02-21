@@ -20,6 +20,9 @@ try {
     throw new GradleException("Missing crashlytics.properties, check the crashlytics.properties.sample file.");
 }
 
+ext.betaDistributionReleaseNotes="An amazing release for you all"
+ext.betaDistributionEmails="gpj@twitter.com"
+
 android {
     compileSdkVersion 21
     buildToolsVersion "20.0.0"
